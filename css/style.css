@@ -1,0 +1,42 @@
+header {
+    display: flex;
+    justify-content: space-between;/*espaçamento entre linhas*/
+    align-items: center;/*alinhamento vertical*/
+    padding: 2.5em 0;
+}
+header .title-box .title{
+    color: var(--ColorDark);
+}
+header .title-box  p {
+    color: var(--ColorDarkLight);
+    font-weight: 700;
+}
+header .toggle-mode {
+    display: flex;
+    align-items: center;
+    color: var(--ColorDarkLight);
+    font-size: 16px;
+    font-weight: 700;
+}
+header .toggle-mode input[type=checkbox]{
+    -webkit-appearance: none;/*aparência de caixa para o botão*/
+    width: 90px;/*largura*/
+    height: 40px;/*altura*/
+    border-radius: 100px;
+    margin-left: 20px;
+    background: var(--ToggleBtnDark);
+    cursor: pointer;
+    outline: 0;
+    position: relative;
+}
+/* :: siginifica um pseudo-elemento*/
+header .toggle-mode input[type=checkbox] ::before {
+    content: '';
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    background: var(--BgLight);
+    transform: scale(0.8);
+    position: absolute;/* vai ficar com o tamanho absoluto baseado no tamanho do botâo pai*/
+
+}
