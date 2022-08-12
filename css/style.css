@@ -4,10 +4,10 @@ header {
     align-items: center;/*alinhamento vertical*/
     padding: 2.5em 0;
 }
-header .title-box .title{
+header .title-box .title {
     color: var(--ColorDark);
 }
-header .title-box  p {
+header .title-box p {
     color: var(--ColorDarkLight);
     font-weight: 700;
 }
@@ -15,8 +15,8 @@ header .toggle-mode {
     display: flex;
     align-items: center;
     color: var(--ColorDarkLight);
-    font-size: 16px;
     font-weight: 700;
+    font-size: 16px;
 }
 header .toggle-mode input[type=checkbox]{
     -webkit-appearance: none;/*aparência de caixa para o botão*/
@@ -30,7 +30,7 @@ header .toggle-mode input[type=checkbox]{
     position: relative;
 }
 /* :: siginifica um pseudo-elemento*/
-header .toggle-mode input[type=checkbox] ::before {
+header .toggle-mode input[type=checkbox]::before {
     content: '';
     height: 40px;
     width: 40px;
@@ -39,4 +39,60 @@ header .toggle-mode input[type=checkbox] ::before {
     transform: scale(0.8);
     position: absolute;/* vai ficar com o tamanho absoluto baseado no tamanho do botâo pai*/
 
+}
+main .followers{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    background: var(--BgLightCard);
+    position: relative;
+}
+.card::before{
+    content: '';
+    position: absolute;
+    height: 5px;
+    border-radius: 8px 8px 0 0;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+.card.facebook::before{
+    background: var(--Facebook);
+}
+.card.twitter::before{
+    background: var(--Twitter);
+}
+.card.instagram::before{
+    background: var(--Instagram);
+}
+.card.youtube::before{
+    background: var(--YouTube);
+}
+
+.card .username{
+    display: flex;
+    justify-content: center;
+    color: var(--ColorDarkLight);
+}
+.card .username img {
+    margin-right: 10px;
+}
+.car .count-follow{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px 0;
+    font-size: 1.1em;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--ColorDarkLight);
 }
