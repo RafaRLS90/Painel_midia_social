@@ -36,11 +36,16 @@ header .toggle-mode input[type=checkbox]::before {
     width: 40px;
     border-radius: 50px;
     background: var(--BgLight);
-    transform: scale(0.8);
+    transform: translateX(50px) scale(0.8);
+    transition: transform 0.3s;
     position: absolute;/* vai ficar com o tamanho absoluto baseado no tamanho do botâo pai*/
 
 }
-main .followers{
+header .toggle-mode input[type=checkbox]:checked::before{
+    transform:translateX(0) scale(0.8);
+}
+main .followers,
+main .grid-overview{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 30px;
@@ -55,6 +60,9 @@ main .followers{
     cursor: pointer;
     background: var(--BgLightCard);
     position: relative;
+}
+.card:hover{
+    background: var(--BgLightCardHover);
 }
 .card::before{
     content: '';
@@ -95,4 +103,55 @@ main .followers{
     letter-spacing: 5px;
     text-transform: uppercase;
     color: var(--ColorDarkLight);
+}
+.card .count-follow span {
+    font-size: 4em;
+    font-weight: 700;
+    letter-spacing: 0;
+    color: var(--ColorDark);
+}
+.card span{
+    display: flex;
+    align-items: center;
+    color: var(--LimeGreen);
+    font-weight: 700;
+}
+
+.card span.down{
+    color: var(--BrightRed);
+}
+.card span img {
+    margin-right: 5px;
+}
+main .overview{
+    margin-top: 50px;
+}
+main .overview h2{
+    color: var(--ColorDark);
+    font-size: 1.7em;
+}
+.grid-overview{
+    margin: 20px 0;
+}
+.grid-overview .card .title-card{
+    margin-bottom: 20px;
+}
+.grid-overview .title-card span{
+    font-size: 1.1em;
+    color: var(--ColorDarkLight);
+}
+.grid-overview .card .title-card,
+.grid-overview .card .text-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.grid-overview .card .text-card{
+    align-items: baseline;
+}
+.grid-overview .card .text-card p {
+    font-size: 2.8em;
+    font-weight: 700;
+    color: var(--ColorDark);
 }
